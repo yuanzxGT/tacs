@@ -72,7 +72,7 @@ class TACSRefFrame : public TACSObject {
 
   // Returns the rotation matrix associated with the frame of ref.
   //--------------------------------------------------------------
-  void getRotation( const TacsScalar ** _C );
+  void getRotation( const TacsScalar ** __C );
   
   // Getters and setters for DVs
   //----------------------------

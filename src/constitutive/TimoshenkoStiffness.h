@@ -75,7 +75,7 @@ class TimoshenkoStiffness : public TACSConstitutive {
   inline void calcStress( const TacsScalar e[], TacsScalar s[] );
 
   void setData( const TacsScalar _rho[],
-                const TacsScalar _C[],
+                const TacsScalar __C[],
                 const TacsScalar _axis[] );
 
  private:

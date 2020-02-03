@@ -225,8 +225,8 @@ TACSRefFrame::~TACSRefFrame(){
 /*
   Retrieve the rotation matrix from the global to local coordinates
 */
-void TACSRefFrame::getRotation( const TacsScalar **_C ){
-  *_C = C;
+void TACSRefFrame::getRotation( const TacsScalar **__C ){
+  *__C = C;
 }
 
 /*

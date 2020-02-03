@@ -73,8 +73,8 @@ class TACSPMat : public TACSMat {
   // Other miscelaneous functions
   // ----------------------------
   void getBCSRMat( BCSRMat ** A, BCSRMat ** B );  // Access the underlying mats
-  void getRowMap( int *bs, int *_N, int *_Nc );
-  void getColMap( int *bs, int *_M );
+  void getRowMap( int *bs, int *__N, int *__Nc );
+  void getColMap( int *bs, int *__M );
   TACSVarMap *getRowMap(){ return rmap; }
   void getExtColMap( TACSBVecDistribute **ext_map ); // Access the column map  
   void printNzPattern( const char *fileName ); // Print the non-zero pattern

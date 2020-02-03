@@ -59,9 +59,9 @@
 class ScMat : public TACSMat {
  public:
   ScMat( TACSVarMap *_rmap,
-         BCSRMat *_B, BCSRMat *_E, BCSRMat *_F, BCSRMat *_C,
-         TACSBVecDistribute *_b_map,
-         TACSBVecDistribute *_c_map );
+         BCSRMat *__B, BCSRMat *__E, BCSRMat *__F, BCSRMat *__C,
+         TACSBVecDistribute *__b_map,
+         TACSBVecDistribute *__c_map );
   ~ScMat();
 
   // Functions for setting values in the matrix
@@ -80,8 +80,8 @@ class ScMat : public TACSMat {
 
   // Get the underlying representation for ScMat
   // -------------------------------------------
-  void getBCSRMat( BCSRMat **_B, BCSRMat **_E,
-                   BCSRMat **_F, BCSRMat **_C );
+  void getBCSRMat( BCSRMat **__B, BCSRMat **__E,
+                   BCSRMat **__F, BCSRMat **__C );
 
   TACSBVecDistribute *getLocalMap(){ return b_map; }
   TACSBVecDistribute *getSchurMap(){ return c_map; }
@@ -90,7 +90,7 @@ class ScMat : public TACSMat {
  protected:
   ScMat();
   void init( TACSVarMap *_rmap,
-             BCSRMat *_B, BCSRMat *_E, BCSRMat *_F, BCSRMat *_C,
+             BCSRMat *__B, BCSRMat *__E, BCSRMat *__F, BCSRMat *__C,
              TACSBVecDistribute *_b_map, 
              TACSBVecDistribute *_c_map );
 

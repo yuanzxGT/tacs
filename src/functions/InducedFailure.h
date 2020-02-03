@@ -70,7 +70,7 @@ class TACSInducedFailure : public TACSFunction {
                          DISCRETE_POWER_SQUARED };
   enum InducedConstitutiveFunction { FAILURE, BUCKLING };
 
-  TACSInducedFailure( TACSAssembler *_tacs, double _P,
+  TACSInducedFailure( TACSAssembler *_tacs, double __P,
                       InducedConstitutiveFunction func=FAILURE );
   ~TACSInducedFailure();
 
@@ -80,7 +80,7 @@ class TACSInducedFailure : public TACSFunction {
 
   // Set parameters to control how the induced functions are evaluated
   // -----------------------------------------------------------------
-  void setParameter( double _P );
+  void setParameter( double __P );
   double getParameter();
   void setInducedType( InducedNormType _norm_type );
   void setLoadFactor( TacsScalar _loadFactor );

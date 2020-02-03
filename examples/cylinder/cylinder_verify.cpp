@@ -1102,7 +1102,7 @@ int main( int argc, char * argv[] ){
 
   int orthotropic_flag = 1, grid_study_flag = 0;
   int nx = 20;
-  int order = 3;
+  int order = 2;
   for ( int k = 0; k < argc; k++ ){
     if (sscanf(argv[k], "order=%d", &order) == 1){
       if (order < 2){ order = 2; }

@@ -11,6 +11,7 @@ CXX_OBJS = TACSElement.o \
 	FElibrary.o \
 	TACSShell.o \
 	ShellUtils.o \
+	ShellUtilsOneLoop.o \
 	LargeRotUtils.o \
 	PlaneStressTri6.o \
 	MITC3.o \

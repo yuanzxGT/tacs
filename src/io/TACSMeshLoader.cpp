@@ -942,7 +942,6 @@ int TACSMeshLoader::scanBDFFile( const char * file_name ){
           parse_element_field(line[0],
                               &elem_num, &component_num,
                               nodes, 3);
-
           if (component_num > num_components){
             num_components = component_num;
           }
@@ -1051,6 +1050,7 @@ int TACSMeshLoader::scanBDFFile( const char * file_name ){
           Xpts_unsorted[3*num_nodes+1] = y;
           Xpts_unsorted[3*num_nodes+2] = z;
           num_nodes++;
+		  
         }
         else if (strncmp(line[0], "GRID", 4) == 0){
           parse_node_short_free_field(line[0], &node, &x, &y, &z);
@@ -1397,7 +1397,6 @@ int TACSMeshLoader::scanBDFFile( const char * file_name ){
           // Add the element to the connectivity list
           elem_nums[num_elements] = elem_num-1;
           elem_comp[num_elements] = component_num-1;
-
           elem_con[elem_con_size]   = nodes[0]-1;
           elem_con[elem_con_size+1] = nodes[1]-1;
           elem_con[elem_con_size+2] = nodes[2]-1;

@@ -141,16 +141,16 @@ TimoshenkoStiffness::TimoshenkoStiffness( TacsScalar rhoA,
   Set the full stiffness matrix
 */
 TimoshenkoStiffness::TimoshenkoStiffness( const TacsScalar _rho[], 
-                                          const TacsScalar _C[],
+                                          const TacsScalar __C[],
                                           const TacsScalar _axis[] ){
-  setData(_rho, _C, _axis);
+  setData(_rho, __C, _axis);
 }
 
 /*
   Set the stiffness data
 */
 void TimoshenkoStiffness::setData( const TacsScalar _rho[],
-                                   const TacsScalar _C[],
+                                   const TacsScalar __C[],
                                    const TacsScalar _axis[] ){
   // Set the reference axis and normalize it
   axis[0] = _axis[0];
@@ -165,7 +165,7 @@ void TimoshenkoStiffness::setData( const TacsScalar _rho[],
 
   // Copy the density/stiffness matrix
   memcpy(rho, _rho, 4*sizeof(TacsScalar));
-  memcpy(C, _C, 36*sizeof(TacsScalar));
+  memcpy(C, __C, 36*sizeof(TacsScalar));
 }
 
 TimoshenkoStiffness::~TimoshenkoStiffness(){}

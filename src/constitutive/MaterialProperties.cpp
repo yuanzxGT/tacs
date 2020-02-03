@@ -43,7 +43,7 @@ OrthoPly::OrthoPly( TacsScalar _plyThickness, TacsScalar _rho,
                     TacsScalar _G12, TacsScalar _G23, TacsScalar _G13,
                     TacsScalar _Xt, TacsScalar _Xc, 
                     TacsScalar _Yt, TacsScalar _Yc, 
-                    TacsScalar _S12, TacsScalar _C ){
+                    TacsScalar _S12, TacsScalar __C ){
   plyThickness = _plyThickness;
   rho = _rho;
   E1 = _E1;
@@ -253,13 +253,13 @@ void OrthoPly::getLaminateStiffness( TacsScalar *_Q11, TacsScalar *_Q12,
   Get the strength parameters
 */
 void OrthoPly::getStrength( TacsScalar *_Xt, TacsScalar *_Xc, TacsScalar *_Yt, 
-                            TacsScalar *_Yc, TacsScalar *_S12, TacsScalar *_C ){
+                            TacsScalar *_Yc, TacsScalar *_S12, TacsScalar *__C ){
   *_Xt = Xt;
   *_Xc = Xc;
   *_Yt = Yt;
   *_Yc = Yc;
   *_S12 = S12;
-  *_C = C;
+  *__C = C;
 }
 
 /*

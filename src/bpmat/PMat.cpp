@@ -265,18 +265,18 @@ void TACSPMat::getBCSRMat( BCSRMat ** A, BCSRMat ** B ){
 /*
   Get the local number of rows/coupling rows in the matrix
 */
-void TACSPMat::getRowMap( int *_bs, int *_N, int *_Nc ){
+void TACSPMat::getRowMap( int *_bs, int *__N, int *_Nc ){
   if (_bs){ *_bs = bsize; }
   if (_Nc){ *_Nc = Nc; }
-  if (_N){ *_N = N; }
+  if (__N){ *__N = N; }
 }
 
 /*
   Get the number of columns in the matrix
 */
-void TACSPMat::getColMap( int *_bs, int *_M ){
+void TACSPMat::getColMap( int *_bs, int *__M ){
   if (_bs){ *_bs = bsize; }
-  if (_M){ *_M = N; }
+  if (__M){ *__M = N; }
 }
 
 /*

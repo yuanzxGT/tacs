@@ -35,7 +35,7 @@ comm = MPI.COMM_WORLD
 #---------------------------------------------------------------------!
 
 for arg in sys.argv:
-    print arg
+    print(arg)
 
 bdfFileName = "plate.bdf" # Specify the name of the file to load which
                           # contains the mesh
@@ -124,5 +124,5 @@ solver.setRelTol(1e-8)
 #solver.setOrderingType(TACS.PY_NATURAL_ORDER)
 #solver.setUseLapack(1)
 solver.setMaxNewtonIters(20)
-solver.configureF5Output(f5, 1, f5_format)
+#solver.configureF5Output(f5, 1, f5_format)
 solver.integrate()

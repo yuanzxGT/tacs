@@ -19,11 +19,11 @@ clean:
 	rm -f *.o annulus
 
 test: default
-	python generate_bdf.py --nyelems 25 --order 3
+	python3.6 generate_bdf.py --nyelems 25 --order 3
 	mpirun -np 2 ./annulus circular_annulus91x51_order3.bdf
 	mpirun -np 4 ./annulus circular_annulus91x51_order3.bdf
 
 test_complex: complex
-	python generate_bdf.py --nyelems 25 --order 3
+	python3.6 generate_bdf.py --nyelems 25 --order 3
 	mpirun -np 2 ./annulus circular_annulus91x51_order3.bdf
 	mpirun -np 4 ./annulus circular_annulus91x51_order3.bdf

@@ -42,7 +42,7 @@ class TACSBVecDistCtx;
 */
 class TACSVarMap : public TACSObject {
  public:
-  TACSVarMap( MPI_Comm _comm, int _N );
+  TACSVarMap( MPI_Comm __comm, int __N );
   ~TACSVarMap();
 
   int getDim();

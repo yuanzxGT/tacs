@@ -284,17 +284,17 @@ FEMat::FEMat( TACSThreadInfo *thread_info, TACSVarMap *_rmap,
 
   // Create the block matrices
   MPI_Comm comm = _rmap->getMPIComm();
-  BCSRMat *_B = new BCSRMat(comm, thread_info, bsize, Nb, Nb, &browp, &bcols);
+  BCSRMat *__B = new BCSRMat(comm, thread_info, bsize, Nb, Nb, &browp, &bcols);
   BCSRMat *_E = new BCSRMat(comm, thread_info, bsize, Nb, Nc, &erowp, &ecols);
   BCSRMat *_F = new BCSRMat(comm, thread_info, bsize, Nc, Nb, &frowp, &fcols);
-  BCSRMat *_C = new BCSRMat(comm, thread_info, bsize, Nc, Nc, &crowp, &ccols);
+  BCSRMat *__C = new BCSRMat(comm, thread_info, bsize, Nc, Nc, &crowp, &ccols);
 
   // Insure that the inverse look-up has been allocated
   (_b_map->getIndices())->setUpInverse();
   (_c_map->getIndices())->setUpInverse();
 
   // Initialize the underlying class
-  init(_rmap, _B, _E, _F, _C, _b_map, _c_map);
+  init(_rmap, __B, _E, _F, __C, _b_map, _c_map);
 }
 
 FEMat::~FEMat(){}

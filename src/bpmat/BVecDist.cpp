@@ -33,7 +33,7 @@
   comm:  this object is defined over all processors in this comm
   N:     the number of nodes for this processor
 */
-TACSVarMap::TACSVarMap( MPI_Comm _comm, int _N ){
+TACSVarMap::TACSVarMap( MPI_Comm _comm, int __N ){
   comm = _comm;
 
   // Get the communicator size
@@ -41,7 +41,7 @@ TACSVarMap::TACSVarMap( MPI_Comm _comm, int _N ){
   MPI_Comm_rank(comm, &mpiRank);
 
   // The ownership ranges for all processes
-  N = _N;
+  N = __N;
   ownerRange = new int[ mpiSize+1 ];
   memset(ownerRange, 0, (mpiSize+1)*sizeof(int));
 

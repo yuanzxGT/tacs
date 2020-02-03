@@ -46,10 +46,10 @@
   c_map: the global variables corresponding to the C-variables
 */
 ScMat::ScMat( TACSVarMap *_rmap,
-              BCSRMat *_B, BCSRMat *_E, BCSRMat *_F, BCSRMat *_C,
-              TACSBVecDistribute *_b_map,
-              TACSBVecDistribute *_c_map ){
-  init(_rmap, _B, _E, _F, _C, _b_map, _c_map);
+              BCSRMat *__B, BCSRMat *__E, BCSRMat *__F, BCSRMat *__C,
+              TACSBVecDistribute *__b_map,
+              TACSBVecDistribute *__c_map ){
+  init(_rmap, __B, __E, __F, __C, __b_map, __c_map);
 }
 
 /*
@@ -80,16 +80,16 @@ ScMat::ScMat(){
   c_map: the global variables corresponding to the C-variables
 */
 void ScMat::init( TACSVarMap *_rmap,
-                  BCSRMat *_B, BCSRMat *_E, BCSRMat *_F, BCSRMat *_C,
+                  BCSRMat *__B, BCSRMat *_E, BCSRMat *_F, BCSRMat *__C,
                   TACSBVecDistribute *_b_map,
                   TACSBVecDistribute *_c_map ){
   rmap = _rmap;
   rmap->incref();
 
-  B = _B;  B->incref();
+  B = __B;  B->incref();
   E = _E;  E->incref();
   F = _F;  F->incref();
-  C = _C;  C->incref();
+  C = __C;  C->incref();
 
   b_map = _b_map;
   b_map->incref();
@@ -335,12 +335,12 @@ void ScMat::mult( TACSVec *txvec, TACSVec *tyvec ){
   output:
   B, E, F, C: the matrices in the ScMat class
 */
-void ScMat::getBCSRMat( BCSRMat **_B, BCSRMat **_E,
-                        BCSRMat **_F, BCSRMat **_C ){
-  if (_B){ *_B = B; }
+void ScMat::getBCSRMat( BCSRMat **__B, BCSRMat **_E,
+                        BCSRMat **_F, BCSRMat **__C ){
+  if (__B){ *__B = B; }
   if (_E){ *_E = E; }
   if (_F){ *_F = F; }
-  if (_C){ *_C = C; }
+  if (__C){ *__C = C; }
 }
 
 /*!

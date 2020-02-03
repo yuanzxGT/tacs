@@ -55,12 +55,12 @@ class InducedFailureCtx : public TACSFunctionCtx {
   Evaluate the Induced only on the elements specified
 */
 TACSInducedFailure::TACSInducedFailure( TACSAssembler *_tacs, 
-                                        double _P,
+                                        double __P,
                                         InducedConstitutiveFunction func ):
 TACSFunction(_tacs, TACSFunction::ENTIRE_DOMAIN,
              TACSFunction::TWO_STAGE, 0){
   // Set the penalization information
-  P = _P;
+  P = __P;
   norm_type = EXPONENTIAL;
   load_factor = 1.0;
 
@@ -90,8 +90,8 @@ const char * TACSInducedFailure::funcName = "TACSInducedFailure";
 /*
   Set the value of P
 */
-void TACSInducedFailure::setParameter( double _P ){
-  P = _P;
+void TACSInducedFailure::setParameter( double __P ){
+  P = __P;
 }
 
 /*

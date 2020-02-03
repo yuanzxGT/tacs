@@ -73,7 +73,7 @@ class OrthoPly : public TACSObject {
                              TacsScalar *_Q22, TacsScalar *_Q44,
                              TacsScalar *_Q55, TacsScalar *_Q66 );
   void getStrength( TacsScalar *_Xt, TacsScalar *_Xc, TacsScalar *_Yt, 
-                    TacsScalar *_Yc, TacsScalar *_S12, TacsScalar *_C );
+                    TacsScalar *_Yc, TacsScalar *_S12, TacsScalar *__C );
   void getStrainStrength( TacsScalar *_eXt, TacsScalar *_eXc, TacsScalar *_eYt, 
                           TacsScalar *_eYc, TacsScalar *_eS12 );
   void getTsaiWu( TacsScalar *_F1, TacsScalar *_F2, 

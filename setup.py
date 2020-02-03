@@ -44,7 +44,14 @@ runtime_lib_dirs = get_global_dir(['lib'])
 rel_inc_dirs = ['src', 'src/bpmat', 'src/elements', 
                 'src/constitutive', 'src/functions', 'src/io']
 rel_lib_dirs = ['lib']
-libs.extend(['tacs'])
+#libs.extend(['tacs'])
+libs.extend(['tacs', 'lapack', 'blas', 'metis'])
+os.environ["CC"] = 'mpicxx'
+os.environ["CXX"] = 'mpicxx'
+# Add symbolic link to site-packages directory
+from distutils.sysconfig import get_python_lib
+os.symlink(os.path.abspath('tacs')+'/',get_python_lib()+'/tacs')
+
 
 # Convert from relative to absolute directories
 inc_dirs.extend(get_global_dir(rel_inc_dirs))
